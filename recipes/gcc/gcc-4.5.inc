@@ -7,8 +7,7 @@ LICENSE = "GPLv3"
 DEPENDS = "mpfr gmp libmpc libelf"
 NATIVEDEPS = "mpfr-native gmp-native libmpc-native"
 
-
-INC_PR = "r38"
+INC_PR = "r41"
 
 SRCREV = "170880"
 PV = "4.5"
