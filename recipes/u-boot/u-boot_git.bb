@@ -1,5 +1,5 @@
 require u-boot.inc
-PR = "r76"
+PR = "r77"
 
 FILESPATHPKG =. "u-boot-git:"
 
@@ -197,6 +197,12 @@ do_compile_omapzoom36x () {
         oe_runmake all
         oe_runmake tools
 }
+
+SRC_URI_overo = "git://www.sakoman.com/git/u-boot.git;branch=omap3-v2011.09;protocol=git \
+                 file://fw_env.config \
+                "
+SRCREV_overo = "0f331e606c80166c1bfe5cac40dfc0616708f31b"
+PV_overo = "2011.09+${PR}+gitr${SRCREV}"
 
 SRC_URI_omap4430-panda = "git://www.sakoman.com/git/u-boot.git;branch=omap4-exp;protocol=git \
                           file://fix-break-caused-by-new-binutils.patch \
