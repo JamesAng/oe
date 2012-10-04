@@ -1,9 +1,10 @@
-SECTION = "console/utils"
 DESCRIPTION = "Tools for performance analysis."
+HOMEPAGE = "http://lmbench.sourceforge.net/"
+SECTION = "console/utils"
 LICENSE = "GPL"
 RDEPENDS_${PN} = "debianutils"
 
-PR = "r6"
+PR = "r7"
 
 inherit autotools
 
@@ -15,21 +16,9 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/lmbench/lmbench-${PV}.tgz \
 SRC_URI[md5sum] = "b3351a3294db66a72e2864a199d37cbf"
 SRC_URI[sha256sum] = "cbd5777d15f44eab7666dcac418054c3c09df99826961a397d9acf43d8a2a551"
 
-S = "${WORKDIR}/lmbench-${PV}"
-
 EXTRA_OEMAKE = 'CC="${CC}" AR="${AR}" RANLIB="${RANLIB}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" LD="${LD}" OS="${TARGET_SYS}" \
 		TARGET="${TARGET_OS}" BASE="${prefix}"'
-
-
-python do_unpack () {
-	bb.build.exec_func('base_do_unpack', d)
-	bb.build.exec_func('byebk_do_unpack', d)
-}
-
-byebk_do_unpack () {
-	find ${S}/.. -name BitKeeper -o -name SCCS | xargs rm -rf
-}
 
 do_configure() {
 	:

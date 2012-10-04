@@ -10,7 +10,7 @@ PACKAGE_ARCH = "all"
 
 SRC_URI = "http://www.ettus.com/downloads/uhd_releases/${@'${PV}'.replace('.', '_')}/images-only/UHD-images-${PV}.tar.gz"
 
-S = ${WORKDIR}/UHD-images-${PV}
+S = ${WORKDIR}/UHD-images-${PV}-59f407f
 
 do_install() {
 	install -d ${D}${datadir}/uhd/images

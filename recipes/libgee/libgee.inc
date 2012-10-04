@@ -5,7 +5,7 @@ SECTION = "libs"
 DEPENDS = "glib-2.0"
 BBCLASSEXTEND = "native"
 LICENSE = "LGPL"
-INC_PR = "r6"
+INC_PR = "r7"
 PE = "1"
 
 inherit autotools vala
